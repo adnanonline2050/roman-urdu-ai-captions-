@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roman Urdu Ai Captions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#E95420', // Ubuntu Orange
+              'secondary': '#EAEAEA', // Light Grey
+              'accent': '#DD4814', // Darker Orange
+              'dark': '#2D232A', // Dark Aubergine/Charcoal
+              'light': '#FDFDFD', // Off-white
+              'panel': '#F7F7F7', // Panel background
+            },
+            keyframes: {
+              'background-pan': {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              },
+              'fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'pop-in': {
+                '0%': { opacity: '0', transform: 'scale(0.8)' },
+                '80%': { opacity: '1', transform: 'scale(1.05)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              'slide-from-bottom': {
+                '0%': { opacity: '0', transform: 'translateY(100%)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'glow': {
+                '0%, 100%': { textShadow: '0 0 5px var(--glow-color, #818CF8), 0 0 10px var(--glow-color, #818CF8)' },
+                '50%': { textShadow: '0 0 10px var(--glow-color, #818CF8), 0 0 20px var(--glow-color, #818CF8)' }
+              },
+              'blink-caret': {
+                'from, to': { opacity: '1' },
+                '50%': { opacity: '0' }
+              },
+              'zoom-in-out': {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.05)' }
+              },
+              'blur-in': {
+                '0%': { opacity: '0', filter: 'blur(10px)' },
+                '100%': { opacity: '1', filter: 'blur(0)' }
+              },
+              'bubble-pop-in': {
+                '0%': { transform: 'scale(0)', opacity: '0' },
+                '60%': { transform: 'scale(1.1)', opacity: '1' },
+                '100%': { transform: 'scale(1)', opacity: '1' }
+              },
+               'bounce-in': {
+                '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                '60%': { transform: 'translateY(10%)', opacity: '1' },
+                '80%': { transform: 'translateY(-5%)' },
+                '100%': { transform: 'translateY(0)' },
+              },
+              'word-bounce-in': {
+                '0%': { transform: 'scale(0.5)', opacity: '0' },
+                '60%': { transform: 'scale(1.1)', opacity: '1' },
+                '80%': { transform: 'scale(0.95)' },
+                '100%': { transform: 'scale(1)' },
+              },
+              'word-pulse': {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.15)' }
+              },
+              'blink': {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0.7' },
+              }
+            },
+            animation: {
+              'background-pan': 'background-pan 15s ease infinite',
+              'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+              'pop-in': 'pop-in 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards',
+              'slide-from-bottom': 'slide-from-bottom 0.5s ease-out forwards',
+              'glow': 'glow 1.5s ease-in-out infinite',
+              'blink-caret': 'blink-caret 1s step-end infinite',
+              'zoom-in-out': 'zoom-in-out 1.5s ease-in-out forwards',
+              'blur-in': 'blur-in 0.6s ease-out forwards',
+              'bubble-pop-in': 'bubble-pop-in 0.5s ease-out forwards',
+              'bounce-in': 'bounce-in 0.6s ease-out forwards',
+              'word-bounce-in': 'word-bounce-in 0.6s ease-out forwards',
+              'word-pulse': 'word-pulse 0.4s ease-in-out',
+              'blink': 'blink 2s ease-in-out infinite'
+            },
+          },
+        },
+      };
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-light">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
